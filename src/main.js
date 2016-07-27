@@ -2,9 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App'
 
-import CommonHeader from './components/CommonHeader'
+import BaseContainer from './pages/baseContainer'
 import Index from './pages/index'
 import AboutUs from './pages/aboutUs'
+import Friends from './pages/friends'
 
 /* eslint-disable no-new */
 new Vue({
@@ -21,18 +22,19 @@ const router = new VueRouter({
 
 router.map({
   '/': {
-    component: CommonHeader,
+    component: BaseContainer,
     subRoutes: {
       '/': {
         component: Index
       },
       '/about': {
-        component: {
-          AboutUs
-        }
+        component: AboutUs
+      },
+      '/friends': {
+        component: Friends
       }
     }
   }
 })
 
-router.start(App, '#app')
+router.start(App, '#root')
