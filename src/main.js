@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import App from './App'
 
 import BaseContainer from './pages/baseContainer'
-import TopicList from './pages/Topic/TopicList'
+import TopicList from './pages/TopicList'
 import Index from './pages/index'
 import AboutUs from './pages/aboutUs'
 import Friends from './pages/friends'

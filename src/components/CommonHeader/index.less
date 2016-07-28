@@ -1,0 +1,84 @@
+
+@import '../../styles/variables.less';
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-wrapper {
+
+  .logo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -1px;
+    padding: 10px 20px;
+    background-color: @light-black;
+
+    .search {
+      width: 30px;
+      height: 30px;
+      background-image: url(../../assets/cnode_search.png);
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .logo {
+      width: 120px;
+      height: 30px;
+      margin: 0 auto;
+      background-image: url(../../assets/cnodejs_light.svg);
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .more {
+      width: 30px;
+      height: 30px;
+      background-image: url(../../assets/cnode_more.png);
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .header-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    line-height: 50px;
+  }
+
+  .themedark {
+    background-color: @light-black;
+
+    a {
+      padding: 0 15px;
+      color: @gray;
+    }
+
+    .active {
+      color: #fff;
+      font-weight: bold;
+      // border-bottom: 3px solid @purple;
+    }
+  }
+
+  .themelight {
+    background-color: #fff;
+    border-bottom: 1px solid @light-gray;
+
+    a {
+      color: @dark-gray;
+    }
+
+    .active {
+      color: #000;
+      font-weight: bold;
+    }
+  }
+}
