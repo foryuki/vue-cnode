@@ -5,7 +5,7 @@
       <div class="logo"></div>
       <div class="search"></div>
     </div>
-    <div class="header-nav" :class="{ 'themedark' : isDark, 'themelight' : !isDark}">
+    <div class="header-nav" :class="{ 'themedark' : isDark, 'themelight' : !isDark, 'sticky' : sticky}" v-el:nav>
       <a v-link="{path: '/', exact: true, activeClass: 'active'}">首页</a>
       <a v-link="{path: '/about', exact: true, activeClass: 'active'}">新手入门</a>
       <a v-link="{path: '/friends', exact: true, activeClass: 'active'}">API</a>
@@ -18,8 +18,26 @@
 export default {
   data() {
     return {
-      isDark: true
+      isDark: true,
+      sticky: false
     }
+  },
+  ready() {
+    const navNode = this.$els.nav
+    const offsetTop = navNode.offsetTop
+    const self = this
+    const stickySlef = function() {
+      if (document.body.scrollTop > offsetTop + 100) {
+        self.sticky = true
+        console.log(self.sticky)
+      } else {
+        self.sticky = false
+      }
+    }
+    window.addEventListener('scroll', stickySlef, false)
+  },
+  beforeDestroy() {
+    window.removeListener('scroll', stickySlef, false)
   },
   methods: {
     handleTheme: function() {
@@ -32,6 +50,13 @@ export default {
 
 <style lang="less" scoped>
 @import '../styles/variables.less';
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 .header-wrapper {
 
   .logo-wrapper {
@@ -74,7 +99,6 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 15px 30px;
-    border-bottom: 1px solid @light-gray;
   }
 
   .themedark {
@@ -91,6 +115,9 @@ export default {
   }
 
   .themelight {
+    background-color: #fff;
+    border-bottom: 1px solid @light-gray;
+
     a {
       color: @dark-gray;
     }
