@@ -7,17 +7,11 @@ import Index from './pages/index'
 import AboutUs from './pages/aboutUs'
 import Friends from './pages/friends'
 
-/* eslint-disable no-new */
-new Vue({
-  el: 'body',
-  components: { App }
-})
-
 // vue router
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-  // history: true  //启用 HTML5 history 模式
+  history: true  //启用 HTML5 history 模式
 })
 
 router.map({

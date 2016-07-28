@@ -7,7 +7,7 @@
 <script>
 export default {
   ready () {
-    var myroute = $route.name
+    var myroute = this.$route.name
     console.log(myroute)
   }
 }
