@@ -2,7 +2,7 @@
   <div>
     <div class="list-container">
       <div class="list-item" v-for="item in resData">
-        <div class="avatar"></div>
+        <div class="avatar" :style="{backgroundImage: 'url(' + item.author.avatar_url + ')'}"></div>
         <div class="count">
           <span class="reply-count">{{item.reply_count}}</span>
           <span>/</span>
@@ -81,6 +81,9 @@ export default {
     width: 30px;
     height: 30px;
     background-color: #fc0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 2px;
   }
 
