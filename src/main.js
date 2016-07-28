@@ -1,11 +1,18 @@
 import Vue from 'vue'
+import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 import App from './App'
 
 import BaseContainer from './pages/baseContainer'
+import TopicList from './pages/Topic/TopicList'
 import Index from './pages/index'
 import AboutUs from './pages/aboutUs'
 import Friends from './pages/friends'
+
+//vue-resource config
+Vue.use(VueResource)
+Vue.http.options.root = '/root'
+// Vue.http.options.commom['Accept'] = 'application/json'
 
 // vue router
 Vue.use(VueRouter)
@@ -19,7 +26,7 @@ router.map({
     component: BaseContainer,
     subRoutes: {
       '/': {
-        component: Index
+        component: TopicList
       },
       '/about': {
         component: AboutUs
