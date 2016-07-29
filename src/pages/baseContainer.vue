@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import CommonHeader from '#/components/CommonHeader'
+import { CommonHeader } from '#/components'
 
 export default {
   components: {

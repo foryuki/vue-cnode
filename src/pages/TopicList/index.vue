@@ -3,7 +3,7 @@
     <div class="list-container">
       <div class="list-item" v-for="item in resData">
         <div class="tab-wrapper">
-          <div class="tab">{{item.tab}}</div>
+          <div class="tab">{{item.tab || 'default'}}</div>
           <div> &nbsp;•&nbsp; </div>
           <div class="author-name">{{item.author.loginname}}</div>
         </div>
