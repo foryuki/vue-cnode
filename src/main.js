@@ -3,6 +3,8 @@ import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 import App from './App'
 
+import './styles/index.less';
+
 import BaseContainer from '#/pages/BaseContainer'
 import TopicList from '#/pages/TopicList'
 import { TopicDetail } from '#/pages'

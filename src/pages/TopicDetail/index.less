@@ -1,0 +1,55 @@
+@import '../../styles/variables.less';
+
+.topicdatail-wrapper {
+  padding: 10px 5px;
+  background-color: @light-gray;
+}
+
+.topicdetail {
+  background-color: #fff;
+  padding: 15px;
+
+  .title {
+    font-size: 20px;
+  }
+
+  .author-wrapper {
+    display: flex;
+    align-items: center;
+    flex-flow: wrap;
+    padding: 10px 0;
+    font-size: 12px;
+    line-height: 2;
+    border-bottom: 1px solid @light-gray;
+
+    .author-avatar {
+      width: 25px;
+      height: 25px;
+      margin-right: 5px;
+      background-color: #fc0;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+    }
+
+    .divide-dot {
+      padding: 0 5px;
+    }
+
+    .author-name,
+    .creat-time {
+      // padding: 0 10px;
+      color: @dark-gray;
+    }
+
+    .visit-count {
+      color: @purple;
+    }
+  }
+
+  .content {
+    color: @light-black;
+    line-height: 1.3;
+  }
+}
