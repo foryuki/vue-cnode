@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import apiHost from '#/constant/apiHost'
 export default {
   name: 'TopicDetail',
   data() {
@@ -16,7 +17,7 @@ export default {
     data: function(transition) {
       const topicid = transition.to.params.id
       return this.$http.get(
-        `https://cnodejs.org/api/v1/topic/${topicid}`
+        `${apiHost.topicDetail.url}/${topicid}`
       ).then(res => {
         const { data } = res.data
         this.detail = data

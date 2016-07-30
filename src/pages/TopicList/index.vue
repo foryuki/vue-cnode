@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import apiHost from '#/constant/apiHost'
 import { TopicCard } from '#/components'
 export default {
   name: 'TopicList',
@@ -18,7 +19,7 @@ export default {
   },
   ready() {
     this.$http.get(
-      'https://cnodejs.org/api/v1/topics?tab=good'
+      `${apiHost.topicList.url}?tab=good`
       ).then(res => {
         const { data } = res.data
         this.resData = data
