@@ -3,11 +3,12 @@ import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 import App from './App'
 
-import BaseContainer from './pages/baseContainer'
-import TopicList from './pages/TopicList'
-import Index from './pages/index'
-import AboutUs from './pages/aboutUs'
-import Friends from './pages/friends'
+import BaseContainer from '#/pages/BaseContainer'
+import TopicList from '#/pages/TopicList'
+import { TopicDetail } from '#/pages'
+import Index from '#/pages/index'
+import AboutUs from '#/pages/aboutUs'
+import Friends from '#/pages/friends'
 
 //vue-resource config
 Vue.use(VueResource)
@@ -27,6 +28,9 @@ router.map({
     subRoutes: {
       '/': {
         component: TopicList
+      },
+      '/topicdetail/:id': {
+        component: TopicDetail
       },
       '/about': {
         component: AboutUs

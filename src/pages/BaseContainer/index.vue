@@ -9,6 +9,7 @@
 import { CommonHeader } from '#/components'
 
 export default {
+  name: 'BaseContainer',
   components: {
     CommonHeader
   }

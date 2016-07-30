@@ -26,7 +26,7 @@ export default {
     const navNode = this.$els.nav
     const offsetTop = navNode.offsetTop
     const self = this
-    const stickySlef = function() {
+    const stickySelf = function() {
       if (document.body.scrollTop > offsetTop + 100) {
         self.sticky = true
         console.log(self.sticky)
@@ -34,10 +34,10 @@ export default {
         self.sticky = false
       }
     }
-    window.addEventListener('scroll', stickySlef, false)
+    window.addEventListener('scroll', stickySelf, false)
   },
   beforeDestroy() {
-    window.removeListener('scroll', stickySlef, false)
+    // window.removeListener('scroll', stickySelf, false)
   },
   methods: {
     handleTheme: function() {
