@@ -29,7 +29,6 @@ export default {
     const stickySelf = function() {
       if (document.body.scrollTop > offsetTop + 100) {
         self.sticky = true
-        console.log(self.sticky)
       } else {
         self.sticky = false
       }

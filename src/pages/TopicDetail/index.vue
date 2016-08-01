@@ -19,6 +19,13 @@
       </div>
       <div class="content">{{{detail.content}}}</div>
     </div>
+    <div class="reply-count">
+      <span>{{detail.reply_count}}</span>
+      <span>回复</span>
+    </div>
+    <div class="reply">
+      <reply-card v-for="reply in reply" :reply="reply"></reply-card>
+    </div>
   </div>
 </template>
 
@@ -26,13 +33,18 @@
 import apiHost from '#/constant/apiHost'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/default.css'
+import { ReplyCard } from '#/components'
 
 export default {
   name: 'TopicDetail',
   data() {
     return {
-      detail: {}
+      detail: {},
+      reply: []
     }
+  },
+  components: {
+    ReplyCard
   },
   ready() {
   },
@@ -43,8 +55,11 @@ export default {
         `${apiHost.topicDetail.url}/${topicid}`
       ).then(res => {
         const { data } = res.data
+        const { replies } = data
         this.detail = data
+        this.reply = replies
         console.log({...this.detail})
+        console.log(this.reply)
       }, err => {
         console.log(err)
       }).then(() => {
