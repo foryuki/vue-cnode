@@ -1,7 +1,7 @@
 <template>
-  <div class="topicdatail-wrapper">
-    <div class="topicdetail">
-      <div class="title">{{detail.title}}</div>
+  <div class="detail-wrapper">
+    <div class="detail">
+      <div class="title font-title">{{detail.title}}</div>
       <div class="author-wrapper">
         <div class="author-avatar" v-if="detail.author" :style="{backgroundImage: 'url(' + detail.author.avatar_url + ')'}"></div>
         <div class="author-name">
@@ -58,8 +58,6 @@ export default {
         const { replies } = data
         this.detail = data
         this.reply = replies
-        console.log({...this.detail})
-        console.log(this.reply)
       }, err => {
         console.log(err)
       }).then(() => {
@@ -73,4 +71,4 @@ export default {
 }
 </script>
 
-<style lang="less" src="./index.less" scoped></style>
+<style lang="less" src="./styles.less" scoped></style>

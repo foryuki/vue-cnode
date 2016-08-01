@@ -22,4 +22,4 @@
   }
 </script>
 
-<style lang="less" src="./index.less" scoped></style>
+<style lang="less" src="./styles.less" scoped></style>

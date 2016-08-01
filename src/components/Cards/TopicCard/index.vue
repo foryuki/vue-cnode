@@ -5,7 +5,7 @@
       <div> &nbsp;•&nbsp; </div>
       <div class="author-name">{{item.author.loginname}}</div>
     </div>
-    <div class="title" v-link="{path: '/topicdetail/' + item.id }">{{item.title}}</div>
+    <div class="title font-sub-title" v-link="{path: '/topicdetail/' + item.id }">{{item.title}}</div>
     <div class="content">
       <div class="avatar" :style="{backgroundImage: 'url(' + item.author.avatar_url + ')'}"></div>
       <div class="create-time">5天前</div>
@@ -25,4 +25,4 @@
   }
 </script>
 
-<style lang="less" src="./index.less" scoped></style>
+<style lang="less" src="./styles.less" scoped></style>

@@ -6,10 +6,10 @@
       <div class="search"></div>
     </div>
     <div class="header-nav" :class="{ 'themedark' : isDark, 'themelight' : !isDark, 'sticky' : sticky}" v-el:nav>
-      <a v-link="{path: '/', exact: true, activeClass: 'active'}">首页</a>
-      <a v-link="{path: '/about', exact: true, activeClass: 'active'}">新手入门</a>
-      <a v-link="{path: '/friends', exact: true, activeClass: 'active'}">API</a>
-      <a v-link="{path: '/friends', exact: true, activeClass: 'active'}">关于</a>
+      <a class="font-sub-title" v-link="{path: '/', exact: true, activeClass: 'active'}">首页</a>
+      <a class="font-sub-title" v-link="{path: '/about', exact: true, activeClass: 'active'}">新手入门</a>
+      <a class="font-sub-title" v-link="{path: '/friends', exact: true, activeClass: 'active'}">API</a>
+      <a class="font-sub-title" v-link="{path: '/friends', exact: true, activeClass: 'active'}">关于</a>
     </div>
   </div>
 </template>
@@ -46,4 +46,4 @@ export default {
   }
 }
 </script>
-<style lang="less" src="./index.less"></style>
+<style lang="less" src="./styles.less"></style>
