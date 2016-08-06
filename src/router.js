@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { BaseContainer, TopicList, TopicDetail } from '#/pages'
+import { BaseContainer, TopicList, TopicDetail, Account } from '#/pages'
 
 // vue router
 Vue.use(VueRouter)
@@ -18,6 +18,9 @@ router.map({
       },
       '/topicdetail/:id': {
         component: TopicDetail
+      },
+      '/account': {
+        component: Account
       },
     }
   }

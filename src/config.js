@@ -4,4 +4,5 @@ import VueResource from 'vue-resource'
 //vue-resource config
 Vue.use(VueResource)
 Vue.http.options.root = '/root'
+Vue.http.options.xhr = { withCredentials: true }
 // Vue.http.options.commom['Accept'] = 'application/json'
