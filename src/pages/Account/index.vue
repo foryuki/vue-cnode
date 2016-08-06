@@ -25,6 +25,8 @@ export default {
           accesstoken: this.accesstoken
         }
       ).then(res => {
+        const { data } = res;
+        localStorage.setItem('userInfo', JSON.stringify(data))
         localStorage.setItem('accesstoken', this.accesstoken)
         this.$router.go({path: '/'})
       }, err => {

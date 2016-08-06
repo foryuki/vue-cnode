@@ -2,6 +2,8 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
+var svgoConf = require('./svgo.conf')
+//https://github.com/vagusX/webpack-svg-sprite-sample
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10', 'ie_mob >= 10',
@@ -33,20 +35,12 @@ module.exports = {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   module: {
-    // preLoaders: [
-    //   {
-    //     test: /\.vue$/,
-    //     loader: 'eslint',
-    //     include: projectRoot,
-    //     exclude: /node_modules/
-    //   },
-    //   {
-    //     test: /\.js$/,
-    //     loader: 'eslint',
-    //     include: projectRoot,
-    //     exclude: /node_modules/
-    //   }
-    // ],
+    preLoaders: [
+      {
+        test: /\.svg$/,
+        loader: 'svgo-loader?' + JSON.stringify(svgoConf)
+      }
+    ],
     loaders: [
       {
         test: /\.vue$/,
@@ -67,8 +61,14 @@ module.exports = {
         loader: 'vue-html'
       },
       {
+        test: /\.svg$/,
+        loader: 'svg-sprite',
+        include: /assets\/icons/
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url',
+        exclude: /assets\/icons/,
         query: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')

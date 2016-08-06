@@ -39,12 +39,19 @@
   }
 
   .up-icon {
-    width: 15px;
-    height: 15px;
     margin-right: 5px;
-    background-image: url(../../../assets/thumbs_up.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    color: #fff;
+
+    > .icon {
+      stroke: #000;
+    }
+
+    &.thumb-active {
+      color: @purple;
+
+      > .icon {
+        stroke: @purple;
+      }
+    }
   }
 }
