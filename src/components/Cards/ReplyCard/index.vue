@@ -4,9 +4,9 @@
       <div class="author-avatar" :style="{ backgroundImage: 'url(' + reply.author.avatar_url + ')'}"></div>
       <div class="author-name">{{reply.author && reply.author.loginname}}</div>
       <div class="create-time">
-        <span>12楼</span>
+        <span>{{floor}}楼</span>
         <span class="divide-dot">•</span>
-        <span>2个月前</span>
+        <span>{{reply.create_at && reply.create_at.slice(0, 10)}}</span>
       </div>
       <div class="up-icon" @click="handleUpClick" :class="{'thumb-active': isThumbsUp}">
         <icon symbol="thumbs_up"></icon>
@@ -24,7 +24,7 @@ import Icon from '#/components/Icon'
 
 export default {
   name: 'ReplyCard',
-  props: ['reply'],
+  props: ['reply', 'floor'],
   components: {
     Icon
   },

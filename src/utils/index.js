@@ -1,4 +1,5 @@
 import { UserInfo, AccessToken } from '#/constant'
+import router from '#/router'
 
 export function calcREM() {
   const html = document.documentElement
@@ -8,9 +9,22 @@ export function calcREM() {
 }
 
 export function getUserInfo() {
-  return JSON.parse(localStorage.getItem(UserInfo))
+  return getStorageData(UserInfo)
 }
 
 export function getAccessToken() {
-  return localStorage.getItem(AccessToken)
+  return getStorageData(AccessToken)
+}
+
+function getStorageData(key) {
+  const data = localStorage.getItem(key)
+  if (data) {
+    try {
+      return JSON.parse(data)
+    } catch(err) {
+      return data
+    }
+  } else {
+    router.go('/account')
+  }
 }

@@ -14,6 +14,10 @@ const topic = {
   replyUps: {
     methods: 'POST',
     url: 'https://cnodejs.org/api/v1/reply'
+  },
+  newReply: {
+    methods: 'POST',
+    url: 'https://cnodejs.org/api/v1/topic'
   }
 }
 
