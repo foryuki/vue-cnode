@@ -18,6 +18,10 @@ const topic = {
   newReply: {
     methods: 'POST',
     url: 'https://cnodejs.org/api/v1/topic'
+  },
+  newTopic: {
+    methods: 'POST',
+    url: 'https://cnodejs.org/api/v1/topics'
   }
 }
 

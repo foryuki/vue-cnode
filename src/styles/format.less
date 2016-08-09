@@ -22,3 +22,44 @@ h1 {
 img {
   width: 100%;
 }
+
+//针对input, textarea, select, 等表单元素的样式调整
+.form-control {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid @light-gray;
+  outline: 0 !important;
+
+//占一行的
+  &.form-base {
+    width: 100%;
+  }
+
+//只有下边框的
+  &.form-special {
+    width: 100%;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 0;
+    outline: 0 !important;
+    border-bottom: 1px solid @purple;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  }
+
+  &:focus {
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+  }
+}
+
+
+//针对按钮的样式
+.btn-submit {
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  background-color: @purple;
+  color: #fff;
+}

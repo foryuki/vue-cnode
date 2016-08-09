@@ -9,7 +9,7 @@
           <span class="divide-dot">•</span>
         </div>
         <div class="creat-time">
-          <span>{{detail.create_at}}</span>
+          <span>{{detail.create_at && detail.create_at.slice(0, 10)}}</span>
           <span class="divide-dot">•</span>
         </div>
         <div class="visit-count">
@@ -29,9 +29,11 @@
     <div class="new-reply">
       <div class="title">添加回复</div>
       <div class="content">
-        <textarea name="" id="" cols="30" v-model="newReply"></textarea>
+        <textarea name="" id="" cols="30" v-model="newReply" class="form-control form-base"></textarea>
       </div>
-      <div class="btn-reply font-sub-title" @click="handleNewReply">回复</div>
+      <div class="btn-wrapper">
+        <div class="btn-submit font-sub-title" @click="handleNewReply">回复</div>
+      </div>
     </div>
   </div>
 </template>

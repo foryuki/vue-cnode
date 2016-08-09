@@ -1,6 +1,6 @@
 <template>
   <div class="account">
-    <input type="text" v-model="accesstoken" placeholder="请输入 Access Token" class="form-control access-token">
+    <input type="text" v-model="accesstoken" placeholder="请输入 Access Token" class="form-control form-special access-token">
     <div class="submit font-sub-title" @click="handleSubmit">登录</div>
   </div>
 </template>

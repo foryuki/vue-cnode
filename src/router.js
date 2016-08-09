@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { BaseContainer, TopicList, TopicDetail, Account } from '#/pages'
+import { BaseContainer, TopicList, TopicDetail, Account, NewTopic } from '#/pages'
 
 // vue router
 Vue.use(VueRouter)
@@ -22,6 +22,9 @@ router.map({
       '/account': {
         component: Account
       },
+      '/newtopic': {
+        component: NewTopic
+      }
     }
   }
 })
